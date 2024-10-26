@@ -10,3 +10,13 @@ transforms.ToTensor()函数将图像转换为张量
 
 transforms.Normalize()函数用于对图像数据进行【标准化】处理。在深度学习中，数据标准化是一个常见的预处理步骤，它有助于模型更快地收敛，并提高模型的性能。
 这里的mean和std参数是根据数据集的统计信息设置的。
+
+nn.Sequentia
+# 定义一个顺序模型
+model = nn.Sequential(
+    nn.Conv2d(1, 20, 5),  # 卷积层，输入通道1，输出通道20，卷积核大小5x5
+    nn.ReLU(),            # 激活函数
+    nn.Conv2d(20, 64, 5), # 另一个卷积层，输入通道20，输出通道64
+    nn.ReLU(),            # 激活函数
+    nn.MaxPool2d(2, 2)     # 最大池化层，池化窗口大小2x2，步长2
+)
